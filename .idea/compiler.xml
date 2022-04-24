@@ -8,8 +8,8 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="camunda-bpmn-model" />
-        <module name="bpm-modeler" />
         <module name="camunda-xml-model" />
+        <module name="bpm-modeler" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
