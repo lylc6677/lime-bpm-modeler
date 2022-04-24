@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/bpm-modeler/bpm-modeler.iml" filepath="$PROJECT_DIR$/bpm-modeler/bpm-modeler.iml" />
+      <module fileurl="file://$PROJECT_DIR$/camunda-bpmn-model/camunda-bpmn-model.iml" filepath="$PROJECT_DIR$/camunda-bpmn-model/camunda-bpmn-model.iml" />
+      <module fileurl="file://$PROJECT_DIR$/camunda-xml-model/camunda-xml-model.iml" filepath="$PROJECT_DIR$/camunda-xml-model/camunda-xml-model.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/lime-bpm-modeler.iml" filepath="$PROJECT_DIR$/.idea/lime-bpm-modeler.iml" />
+    </modules>
+  </component>
+</project>
