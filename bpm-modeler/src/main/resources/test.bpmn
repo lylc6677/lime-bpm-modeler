@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:di_1="http://www.omg.org/spec/DD/20100524/DI" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_196kzfr" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="4.12.0" modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="7.15.0">
+  <bpmn:process id="usertask01" isExecutable="true">
+    <bpmn:sequenceFlow id="84526" sourceRef="node-0d9d4733-e48c-41fd-a41f-d93cc4718d97" targetRef="node-972401ca-c4db-4268-8780-5607876d8373"></bpmn:sequenceFlow>
+        <bpmn:sequenceFlow id="dcf35" sourceRef="node-972401ca-c4db-4268-8780-5607876d8373" targetRef="node-972401ca-c4db-4268-8780-5607876d8372"></bpmn:sequenceFlow>
+        <bpmn:sequenceFlow id="3f7ee" sourceRef="node-972401ca-c4db-4268-8780-5607876d8372" targetRef="node-b106675a-5148-4a2e-aa86-8e06abd692d1"></bpmn:sequenceFlow>
+        <bpmn:startEvent id="node-0d9d4733-e48c-41fd-a41f-d93cc4718d97">
+        </bpmn:startEvent>
+        <bpmn:userTask id="node-972401ca-c4db-4268-8780-5607876d8373" name="AA">
+        </bpmn:userTask>
+        <bpmn:userTask id="node-972401ca-c4db-4268-8780-5607876d8372" name="BB">
+        </bpmn:userTask>
+        <bpmn:endEvent id="node-b106675a-5148-4a2e-aa86-8e06abd692d1">
+        </bpmn:endEvent>
+  </bpmn:process>
+  <di:BPMNDiagram>
+    <di:BPMNPlane bpmnElement="usertask01">
+      <di:BPMNEdge id="Flow_16wriyy_di" bpmnElement="3f7ee">
+        <di_1:waypoint x="600" y="120" />
+        <di_1:waypoint x="682" y="120" />
+      </di:BPMNEdge>
+      <di:BPMNEdge id="Flow_0hpayv5_di" bpmnElement="dcf35">
+        <di_1:waypoint x="390" y="120" />
+        <di_1:waypoint x="500" y="120" />
+      </di:BPMNEdge>
+      <di:BPMNEdge id="Flow_07qkog6_di" bpmnElement="84526">
+        <di_1:waypoint x="215" y="120" />
+        <di_1:waypoint x="290" y="120" />
+      </di:BPMNEdge>
+      <di:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="node-0d9d4733-e48c-41fd-a41f-d93cc4718d97">
+        <dc:Bounds x="179" y="102" width="36" height="36" />
+      </di:BPMNShape>
+      <di:BPMNShape id="Activity_0909l4n_di" bpmnElement="node-972401ca-c4db-4268-8780-5607876d8373">
+        <dc:Bounds x="290" y="80" width="100" height="80" />
+      </di:BPMNShape>
+      <di:BPMNShape id="Activity_0ja66ip_di" bpmnElement="node-972401ca-c4db-4268-8780-5607876d8372">
+        <dc:Bounds x="500" y="80" width="100" height="80" />
+      </di:BPMNShape>
+      <di:BPMNShape id="Event_1uyoqov_di" bpmnElement="node-b106675a-5148-4a2e-aa86-8e06abd692d1">
+        <dc:Bounds x="682" y="102" width="36" height="36" />
+      </di:BPMNShape>
+    </di:BPMNPlane>
+  </di:BPMNDiagram>
+</bpmn:definitions>
