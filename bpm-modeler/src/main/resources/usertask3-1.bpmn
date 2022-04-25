@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_1vyqf7a" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="4.12.0" modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="7.15.0">
+  <bpmn:process id="Process_1vb9jvw" name="审批流" isExecutable="true">
+    <bpmn:startEvent id="StartEvent_1">
+      <bpmn:outgoing>Flow_0ijbuq0</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:sequenceFlow id="Flow_0ijbuq0" sourceRef="StartEvent_1" targetRef="Activity_0tqzouk" />
+    <bpmn:userTask id="Activity_0tqzouk" name="发起人" camunda:assignee="${assignee}">
+      <bpmn:incoming>Flow_0ijbuq0</bpmn:incoming>
+      <bpmn:outgoing>Flow_02ybbc7</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:sequenceFlow id="Flow_02ybbc7" sourceRef="Activity_0tqzouk" targetRef="Activity_05f3yst" />
+    <bpmn:userTask id="Activity_05f3yst" name="部门经理" camunda:assignee="${assignee}">
+      <bpmn:incoming>Flow_02ybbc7</bpmn:incoming>
+      <bpmn:outgoing>Flow_1fhkxu8</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:exclusiveGateway id="Gateway_0iomiz1">
+      <bpmn:incoming>Flow_1fhkxu8</bpmn:incoming>
+      <bpmn:outgoing>Flow_058s4x2</bpmn:outgoing>
+      <bpmn:outgoing>Flow_0khy4wx</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:sequenceFlow id="Flow_1fhkxu8" sourceRef="Activity_05f3yst" targetRef="Gateway_0iomiz1" />
+    <bpmn:sequenceFlow id="Flow_058s4x2" name="大于5000" sourceRef="Gateway_0iomiz1" targetRef="Activity_1j8gcw2">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${money&gt;5000}</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:endEvent id="Event_0457shr">
+      <bpmn:incoming>Flow_0mc6fdo</bpmn:incoming>
+      <bpmn:incoming>Flow_0khy4wx</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_0mc6fdo" sourceRef="Activity_1j8gcw2" targetRef="Event_0457shr" />
+    <bpmn:sequenceFlow id="Flow_0khy4wx" name="小于5000" sourceRef="Gateway_0iomiz1" targetRef="Event_0457shr">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${money&lt;5000}</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:userTask id="Activity_1j8gcw2" name="分管领导">
+      <bpmn:incoming>Flow_058s4x2</bpmn:incoming>
+      <bpmn:outgoing>Flow_0mc6fdo</bpmn:outgoing>
+    </bpmn:userTask>
+  </bpmn:process>
+</bpmn:definitions>
