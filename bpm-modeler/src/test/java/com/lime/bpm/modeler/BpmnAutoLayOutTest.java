@@ -4,7 +4,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.flowable.bpmn.BpmnAutoLayout;
 import org.flowable.bpmn.converter.BpmnXMLConverter;
 import org.flowable.bpmn.model.BpmnModel;
-import org.flowable.editor.language.json.converter.BpmnJsonConverter;
 import org.flowable.ui.common.util.XmlUtil;
 import org.junit.jupiter.api.Test;
 import org.springframework.core.io.ClassPathResource;
@@ -17,7 +16,6 @@ import java.io.*;
 public class BpmnAutoLayOutTest {
 
     protected BpmnXMLConverter bpmnXmlConverter = new BpmnXMLConverter();
-    protected BpmnJsonConverter bpmnJsonConverter = new BpmnJsonConverter();
 
     @Test
     public void autoLayOutTest() {
